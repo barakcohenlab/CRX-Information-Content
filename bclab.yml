@@ -1,0 +1,19 @@
+name: bclab
+dependencies:
+- python=3.6.5
+- ipython=6.4.0
+- numpy=1.15.4
+- scipy=1.1.0
+- scikit-learn=0.19.1
+- pandas=0.23.4
+- pyopengl
+- cython=0.28.4
+- pip=19.0.3:
+  - pyqt5
+  - matplotlib=3.0.2
+  - pybedtools=0.8.0
+  - logomaker
+- jupyterlab=0.35.4
+- pyyaml
+- bedtools=2.27.1
+- xlrd=1.2.0

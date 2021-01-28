@@ -1,0 +1,2 @@
+Cohen_Library1_IND69_AGCGTGCCCA_S2_R1_001.fastq.gz	library1	p1ToSample.txt	barcodeToSequenceLibrary1.txt
+Cohen_Library2_IND71_TGGGTTCGAA_S3_R1_001.fastq.gz	library2	p1ToSample.txt	barcodeToSequenceLibrary2.txt

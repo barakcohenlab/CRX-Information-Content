@@ -1,0 +1,107 @@
+# DREME 5.0.4
+#     command: dreme -oc SilencerVsStrongEnhancer -p silencer.fasta -n strongEnhancer.fasta -dna -eps -mink 6 -maxk 12 -e 0.05
+#   positives: 837 from silencer.fasta (Tue Jul 28 11:35:47 CDT 2020)
+#   negatives: 1051 from strongEnhancer.fasta (Tue Jul 28 11:35:47 CDT 2020)
+#        host: n054
+#        when: Tue Jul 28 11:40:48 CDT 2020
+
+MEME version 5.0.4
+
+ALPHABET "DNA" DNA-LIKE
+A "Adenine" CC0000 ~ T "Thymine" 008000
+C "Cytosine" 0000CC ~ G "Guanine" FFB300
+N "Any base" = ACGT
+X = ACGT
+. = ACGT
+V "Not T" = ACG
+H "Not G" = ACT
+D "Not C" = AGT
+B "Not A" = CGT
+M "Amino" = AC
+R "Purine" = AG
+W "Weak" = AT
+S "Strong" = CG
+Y "Pyrimidine" = CT
+K "Keto" = GT
+U = T
+END ALPHABET
+
+strands: + -
+
+Background letter frequencies (from dataset):
+A 0.239 C 0.274 G 0.239 T 0.247
+
+
+MOTIF ARAAATC DREME-1
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST     ARAAATC    GATTTYT         71         28   1.4e-008   6.4e-003
+#          AGAAATC    GATTTCT         52         21   2.0e-006   8.9e-001
+#          AAAAATC    GATTTTT         23          7   2.9e-004   1.3e+002
+
+letter-probability matrix: alength= 4 w= 7 nsites= 77 E= 6.4e-003
+1.000000 0.000000 0.000000 0.000000
+0.298701 0.000000 0.701299 0.000000
+1.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 1.000000 0.000000 0.000000
+
+
+MOTIF GGTATB DREME-2
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST      GGTATB     VATACC        125         73   1.5e-008   6.7e-003
+#           GGTATT     AATACC         61         36   1.2e-004   5.6e+001
+#           GGTATG     CATACC         40         24   2.2e-003   1.0e+003
+#           GGTATC     GATACC         28         14   2.7e-003   1.2e+003
+
+letter-probability matrix: alength= 4 w= 6 nsites= 135 E= 6.7e-003
+0.000000 0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.207407 0.318519 0.474074
+
+
+MOTIF CTCTGCCTCC DREME-3
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST  CTCTGCCTCC GGAGGCAGAG         27          2   3.1e-008   1.4e-002
+#       CTCTGCCTCC GGAGGCAGAG         27          2   3.1e-008   1.4e-002
+
+letter-probability matrix: alength= 4 w= 10 nsites= 27 E= 1.4e-002
+0.000000 1.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 1.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+
+
+MOTIF ACTTYY DREME-4
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST      ACTTYY     RRAAGT        279        213   1.0e-010   4.5e-005
+#           ACTTCT     AGAAGT         93         67   1.7e-004   7.7e+001
+#           ACTTTC     GAAAGT         73         48   1.9e-004   8.3e+001
+#           ACTTTT     AAAAGT         57         34   2.5e-004   1.1e+002
+#           ACTTCC     GGAAGT         99         84   3.4e-003   1.5e+003
+
+letter-probability matrix: alength= 4 w= 6 nsites= 336 E= 4.5e-005
+1.000000 0.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.601190 0.000000 0.398810
+0.000000 0.532738 0.000000 0.467262
+
+
+# Stopping reason: E-value threshold exceeded
+#    Running time: 238.92 seconds

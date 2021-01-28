@@ -1,0 +1,2 @@
+White_Library1_SIC69_AGCGTGCCCA_S2_R1_001.fastq.gz	library1	p1Demux.txt	barcodeToSequenceLibrary1.txt
+White_Library2_SIC70_ATGTCCCTAA_S3_R1_001.fastq.gz	library2	p1Demux.txt	barcodeToSequenceLibrary2.txt

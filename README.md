@@ -6,7 +6,7 @@ This repository contains all code, reasonably sized data, and directory structur
 ## Prerequisites
 All necessary software packages are described in `bclab.yml` with the versions used to process data and produce figures. The easiest way to install these packages is by downloading  [Miniconda](https://docs.conda.io/en/latest/miniconda.html) and then typing the command `conda create -f bclab.yml`. You can then activate the virtual environment using `conda activate bclab`. Then, from this directory, launch Jupyter with the command `jupyter lab`.
 
-In addition, you will need to install gkmSVM. Download the C++ source code from the [Beer lab website](http://www.beerlab.org/gkmsvm/) and compile the code following the README. Be sure to change `GKMSVM_PATH` in `utils/gkmsvm.py` to point to wherever the binaries were installed.
+In addition, you will need to install gkmSVM. Download the C++ source code from the [Beer lab website](http://www.beerlab.org/gkmsvm/) and compile the code following the README. Be sure to change `GKMSVM_PATH` in `utils/gkmsvm.py` to point to wherever the binaries were installed. To generate motifs from k-mer scores, you may need to convert the script `svmw_emalign.py` from Python 2 to Python 3. You can do this with the command `2to3`.
 
 All motif analysis was performed using version 5.0.4 of the MEME suite on the WashU High Throughput Computing Facility ([HTCF](http://htcf.wustl.edu/)). There are wrapper scripts to run DREME and TOMTOM on HTCF using [SLURM](https://slurm.schedmd.com/documentation.html) located in `utils`.
 

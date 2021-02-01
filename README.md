@@ -27,6 +27,8 @@ This task must be performed on a cluster such as HTCF. The `run.sh` scripts in t
 
 Once the job has completed, there will be `.counts` files in your `scratch` space. There will also be some logs you can check and histograms showing the distribution of barcode counts in each sample. You can now copy the `.counts` files into your `Data` directory to use on your local machine. These are the same files already in the repository and submitted to GEO.
 
+Addendum: Due to requirements by SRA, the FASTQ files have already been demultiplexed. However, you can comment out the line of `demultiplexAndBarcodeCount.sh` that runs `demultiplexFastq.sh` to count barcodes. For internal Cohen lab users, the original FASTQ files before demultiplexing is located within our lab `LTS` space on HTCF.
+
 ## Brief description of Jupyter notebooks
 1. Processes library 1 with the *Rho* promoter from raw barcode counts to activity scores and performs statistics comparing each sequence to the basal *Rho* promoter alone.
 2. Same as notebook 1, but processes library 2 with the *Rho* promoter.

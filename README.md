@@ -1,8 +1,6 @@
 # CRX Information Content
 This repository contains all code, reasonably sized data, and directory structures necessary to reproduce figures in "Information Content Differentiates Enhancers From Silencers in Mouse Photoreceptors" by Friedman et al., 2021.
 
-
-
 ## Prerequisites
 All necessary software packages are described in `bclab.yml` with the versions used to process data and produce figures. The easiest way to install these packages is by downloading  [Miniconda](https://docs.conda.io/en/latest/miniconda.html) and then typing the command `conda create -f bclab.yml`. You can then activate the virtual environment using `conda activate bclab`. Then, from this directory, launch Jupyter with the command `jupyter lab`.
 
@@ -37,4 +35,6 @@ Addendum: Due to requirements by SRA, the FASTQ files have already been demultip
 5. Computes predicted occupancy for each TF on each sequence, then computes information content and related metrics.
 6. Fits different models on the data with cross-validation and performs additional validation on the TF occupancy logistic regression model.
 7. Generates all other figures for the manuscript, performs statistics, and displays additional data that might be useful.
-8. Generates logos for additional PWMs used in this study.
+
+## License
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)

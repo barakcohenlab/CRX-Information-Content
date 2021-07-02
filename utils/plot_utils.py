@@ -64,7 +64,7 @@ def set_manuscript_params():
     mpl.rcParams["lines.markersize"] = 1.25
     mpl.rcParams["lines.linewidth"] = 2
     mpl.rcParams["font.size"] = 12
-    mpl.rcParams["savefig.dpi"] = 200
+    mpl.rcParams["savefig.dpi"] = 300
 
 
 def add_letter(ax, x, y, letter):
@@ -127,6 +127,7 @@ def save_fig(fig, prefix, tight_layout=True, timestamp=True, tight_pad=1.08):
         fig.text(0, 0, now, transform=fig.transFigure)
     fig.savefig(f"{prefix}.svg", bbox_inches="tight")
     fig.savefig(f"{prefix}.png", bbox_inches="tight")
+    fig.savefig(f"{prefix}.eps", bbox_inches="tight")
     
     
 def setup_multiplot(n_plots, n_cols=2, sharex=True, sharey=True, big_dimensions=True):

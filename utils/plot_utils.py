@@ -13,6 +13,9 @@ import pandas as pd
 from scipy import stats
 from sklearn.metrics import auc
 
+from PIL import Image
+from io import BytesIO
+
 
 def set_presentation_params():
     """Set the matplotlib rcParams to values for presentation-size figures. (Misnomer because I don't use this.)
@@ -127,7 +130,12 @@ def save_fig(fig, prefix, tight_layout=True, timestamp=True, tight_pad=1.08):
         fig.text(0, 0, now, transform=fig.transFigure)
     fig.savefig(f"{prefix}.svg", bbox_inches="tight")
     fig.savefig(f"{prefix}.png", bbox_inches="tight")
-    fig.savefig(f"{prefix}.eps", bbox_inches="tight")
+    # Trick to save a TIFF file https://stackoverflow.com/questions/37945495/save-matplotlib-figure-as-tiff
+    png1 = BytesIO()
+    fig.savefig(png1, format="png", bbox_inches="tight")
+    png2 = Image.open(png1)
+    png2.save(f"{prefix}.tiff")
+    png1.close()
     
     
 def setup_multiplot(n_plots, n_cols=2, sharex=True, sharey=True, big_dimensions=True):

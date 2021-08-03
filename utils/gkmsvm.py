@@ -224,6 +224,8 @@ def train_with_cv(positives, negatives, out_prefix, num_folds=5, word_len=10, in
         The precision at each value of fpr_mean for each fold of the data.
     f_list : np.array, shape = [num_folds, ]
         The F-beta score for each fold of the CV
+    cv_scores : pd.DataFrame
+        The predictions of each sequence when in the validation set.
     """
     # Read in positive and negatives, and then join together for cross-validation.
     positive_ser = fasta_seq_parse_manip.read_fasta(positives)
@@ -242,6 +244,7 @@ def train_with_cv(positives, negatives, out_prefix, num_folds=5, word_len=10, in
     tpr_list = []
     precision_list = []
     f_list = []
+    cv_scores = pd.DataFrame([], columns=["score", "fold"])
 
     # For each fold
     for i, (train_idx, val_idx) in enumerate(folds.split(sequences_ser, labels_ser), 1):
@@ -274,6 +277,11 @@ def train_with_cv(positives, negatives, out_prefix, num_folds=5, word_len=10, in
         precision_list.append(precision)
         f_list.append(f_beta)
 
+        # Make the scores a df, add the fold information
+        scores = scores.to_frame(name="score")
+        scores["fold"] = i
+        cv_scores = cv_scores.append(scores)
+
     # Get rid of temporary files and train the SVM on all the data
     run_subprocess(["rm", "-r", tmp_out_dir])
     logger.info("Now training on full dataset")
@@ -292,7 +300,7 @@ def train_with_cv(positives, negatives, out_prefix, num_folds=5, word_len=10, in
                                                 prc_chance=positive_freq,
                                                 figname=f"{out_prefix}_training")
 
-    return figs, fpr_mean, tpr_list, precision_list, f_list
+    return figs, fpr_mean, tpr_list, precision_list, f_list, cv_scores
 
 
 def score_all_kmers(word_len, info_pos, max_mis, svm_prefix, out_prefix):

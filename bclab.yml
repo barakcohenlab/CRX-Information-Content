@@ -1,4 +1,9 @@
 name: bclab
+channels:
+- bioconda
+- conda-forge
+- defaults
+
 dependencies:
 - python=3.6.5
 - ipython=6.4.0
@@ -8,11 +13,11 @@ dependencies:
 - pandas=0.23.4
 - pyopengl
 - cython=0.28.4
-- pip=19.0.3:
-  - pyqt5
-  - matplotlib=3.0.2
-  - pybedtools=0.8.0
-  - logomaker=0.8
+- pip=19.0.3
+- pip:
+  - matplotlib==3.0.2
+  - pybedtools==0.8.0
+  - logomaker==0.8
 - jupyterlab=0.35.4
 - pyyaml
 - bedtools=2.27.1

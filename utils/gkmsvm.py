@@ -21,7 +21,10 @@ from sklearn.model_selection import StratifiedKFold
 import fasta_seq_parse_manip, modeling, plot_utils
 
 # Path to gkmSVM binaries on my computer compiled from C++ binaries
-GKMSVM_PATH = os.path.join("/home", "ryan", "Documents", "DBBS", "CohenLab", "gkmsvm")
+# GKMSVM_PATH = os.path.join("/home", "ryan", "Documents", "DBBS", "CohenLab", "gkmsvm")
+# Path to gkmSVM binaries within Docker container
+PATH = os.path.dirname(os.path.abspath(__file__))
+GKMSVM_PATH = os.path.join(PATH, "../", "bin")
 
 # Logging for if this is being run as a script.
 logger = logging.getLogger(__name__)
